@@ -125,7 +125,7 @@ def array_manipulator():
             break
         elif cmd[0] == "exchange":
             num_lst = exchange(num_lst, int(cmd[1]))
-        elif cmd[0] == "rnd":
+        elif cmd[0] == "max":
             if cmd[1] == "even":
                 print(max_even(num_lst))
             elif cmd[1] == "odd":
