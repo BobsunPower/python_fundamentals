@@ -3,7 +3,7 @@ def choose(tps):
         return int(input()) * 2
     elif tps == "real":
         return f"{float(input()) * 1.5:.2f}"
-    elif tps == "string":
+    elif tps == "str_lst":
         return f"${input()}$"
 
 
