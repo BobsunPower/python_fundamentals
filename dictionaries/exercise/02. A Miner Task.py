@@ -1,11 +1,10 @@
 from collections import defaultdict
-ch_el_dic = defaultdict(int)
+chem_el = defaultdict(int)
 while True:
     cmd = input()
     if cmd == "stop":
         break
-    tkn = cmd
     vlu = int(input())
-    ch_el_dic[tkn] += vlu
-for i, j in ch_el_dic.items():
-    print(f"{i} -> {j}")
+    chem_el[cmd] += vlu
+for k, v in chem_el.items():
+    print(f"{k} -> {v}")
