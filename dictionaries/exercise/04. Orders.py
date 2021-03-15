@@ -3,15 +3,14 @@ while True:
     data = input()
     if data == 'buy':
         break
-    name, price, quantity = data.split(' ')
-    price = float(price)
-    quantity = int(quantity)
+    name, price, qty = data.split(' ')
+    price, qty = float(price), int(qty)
     if name not in goods:
-        goods[name] = {'price': price, 'quantity': quantity}
+        goods[name] = {'price': price, 'quantity': qty}
     else:
-        goods[name]['quantity'] += quantity
+        goods[name]['quantity'] += qty
         if goods[name]['price'] != price:
             goods[name]['price'] = price
-for i, j in goods.items():
-    total = j['price'] * j['quantity']
-    print(f'{i} -> {total:.2f}')
+for k, v in goods.items():
+    total = v['price'] * v['quantity']
+    print(f'{k} -> {total:.2f}')
