@@ -35,7 +35,7 @@ def way_out(x, y, way_out_map):
         found_a_way_value = [[x, y+1], [x, y-1], [x+1, y], [x-1, y]]
 
         if x == maze_rows-1 or y == len(maze[0])-1 or y == 0:
-            return f"Kate got out in {move+1} moves"
+            return f"Kate got tot in {move+1} moves"
 
         if not all_false(found_a_way):
             x, y = found_a_way_value[found_a_way.index(True)]
@@ -44,7 +44,7 @@ def way_out(x, y, way_out_map):
             move += 1
 
         else:
-            return "Kate cannot get out"
+            return "Kate cannot get tot"
 
 
 maze_rows = int(input())

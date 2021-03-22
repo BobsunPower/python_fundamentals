@@ -1,14 +1,10 @@
-text = input()
-dgt = ""
-ltr = ""
-otr = ""
-for ch in text:
+txt = input()
+dgt, ltr, otr = "", "", ""
+for ch in txt:
     if ch.isdigit():
         dgt += ch
     elif ch.isalpha():
         ltr += ch
     else:
         otr += ch
-print(dgt)
-print(ltr)
-print(otr)
+print(dgt, ltr, otr, sep='\n')
