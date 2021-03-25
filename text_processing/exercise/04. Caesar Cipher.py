@@ -1,6 +1,3 @@
-# TODO
-
-
 def caesar(txt: str):
     out = ''
     for c in txt:
