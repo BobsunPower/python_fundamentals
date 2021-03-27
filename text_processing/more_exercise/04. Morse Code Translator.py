@@ -8,5 +8,4 @@ morse_code = {
     "..-": "U", "...-": "V", ".--": "W", "-..-": "X",
     "-.--": "Y", "--..": "Z", "|": " "
 }
-
 print("".join([morse_code[char] for char in input().split()]))
