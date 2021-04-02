@@ -1,4 +1,5 @@
 # TODO
+
 import re
 text = input()
 pattern = r"(^|(?<=\s))w{3}\.[a-zA-Z0-9-]+(\.[a-z]+)+($|(?=\s))"
