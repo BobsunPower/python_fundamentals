@@ -1,4 +1,5 @@
 # TODO
+
 import re
 text = input()
 pattern = r"(^>>)(?P<name>\w+)<<(?P<price>\d+(\.\d+)?)\!(?P<qty>\d+)($|\s)"
