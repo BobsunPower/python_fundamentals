@@ -1,31 +1,41 @@
+# TODO
 import re
 
-planets = {'attacked': [], 'destroyed': []}
-lines = int(input())
-for line in range(lines):
-    encrypted_message = input()
-    star_pattern = r"[starSTAR]"
-    key = len(re.findall(star_pattern, encrypted_message))
-    decyphered_message = ""
-    for el in encrypted_message:
-        temp_key = ord(el)
-        new_el = chr(temp_key - key)
-        decyphered_message += new_el
-    planet_pattern = r"(?<=@)(?P<planet>[A-Za-z]+)[^@!:>-]*:(?P<population>\d+)[^@!:>-]*(!(?P<attack_destruct>A|D)!)[" \
-                     r"^@!:>-]*(->(?P<soldiers>\d+)) "
-    planet = [obj.groupdict() for obj in re.finditer(planet_pattern, decyphered_message)]
-    if planet:
-        if planet[0]['attack_destruct'] == "A":
-            planets['attacked'].append(planet[0]['planet'])
+n = int(input())
+
+attacked_planets = []
+destroyed_planets = []
+
+key_pattern = r'[star]'
+planet_pattern = r'@(?P<planet>[a-zA-Z]+)([^@!:>\-]+)?:(?P<population>[0-9]+)([^@!:>\-]+)?!(?P<attack_type>[AD])!([^@!:>\-]+)?->(?P<soldier_count>[0-9]+)'
+
+for _ in range(n):
+    line = input()
+    message = ''
+    key_letters = re.findall(key_pattern, line, re.IGNORECASE)
+    key = len(key_letters)
+    for letter in line:
+        new_letter = chr(ord(letter) - key)
+        message += new_letter
+    planets = re.finditer(planet_pattern, message)
+    for planet in planets:
+        p = planet.groupdict()
+        planet_name = p['planet']
+        population = p['population']
+        soldier_count = p['soldier_count']
+        attack_type = p['attack_type']
+        if attack_type == 'A':
+            attacked_planets.append(planet_name)
+            attacked_planets.sort()
         else:
-            planets['destroyed'].append(planet[0]['planet'])
-for planet in planets.values():
-    planet.sort()
-print(f"Attacked planets: {len(planets['attacked'])}")
-if planets['attacked']:
-    for planet in planets['attacked']:
-        print(f"-> {planet}")
-print(f"Destroyed planets: {len(planets['destroyed'])}")
-if planets['destroyed']:
-    for planet in planets['destroyed']:
-        print(f"-> {planet}")
+            destroyed_planets.append(planet_name)
+            destroyed_planets.sort()
+
+
+print(f"Attacked planets: {len(attacked_planets)}")
+for ele in attacked_planets:
+    print(f"-> {ele}")
+
+print(f"Destroyed planets: {len(destroyed_planets)}")
+for el in destroyed_planets:
+    print(f"-> {el}")
