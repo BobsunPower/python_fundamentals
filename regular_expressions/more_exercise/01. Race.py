@@ -1,6 +1,5 @@
 # TODO
 import re
-
 l_pattern = r'[A-Za-z]'
 d_pattern = r'\d'
 
