@@ -1,17 +1,12 @@
-n = float(input())
-if n == 0:
+x = float(input())
+if x == 0:
     print("zero")
-elif n > 0:
-    if n < 1:
-        print("small positive")
-    elif n < 1000000:
+else:
+    if abs(x) < 1:
+        print("small ", end="")
+    elif abs(x) > 1000000:
+        print("large ", end="")
+    if x > 0:
         print("positive")
-    else:
-        print("large positive")
-elif n < 0:
-    if n > -1:
-        print("small negative")
-    elif n > -1000000:
+    elif x < 0:
         print("negative")
-    else:
-        print("large negative")
