@@ -6,7 +6,7 @@ def perfect_number_finder(number):
     if divisors == number:
         print("We have a perfect percent!")
     else:
-        print("It's not so perfect.")
+        print("It'y not so perfect.")
 
 
 perfect_number_finder(int(input()))
