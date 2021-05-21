@@ -1,5 +1,5 @@
 while True:
-    n = float(input())
-    if 1 <= n <= 100:
+    x = float(input())
+    if 1 <= x <= 100:
+        print(f"The number {x} is between 1 and 100")
         break
-print(f"The number {n} is between 1 and 100")
