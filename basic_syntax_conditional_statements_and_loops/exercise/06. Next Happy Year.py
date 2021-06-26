@@ -1,6 +1,4 @@
-year = int(input())
-while True:
+year = int(input()) + 1
+while len(set(str(year))) != len(str(year)):
     year += 1
-    if len(str(year)) == len(set(str(year))):
-        print(year)
-        break
+print(year)
