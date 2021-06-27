@@ -2,7 +2,7 @@
 
 import re
 text = input()
-pattern = r"(^>>)(?P<name>\w+)<<(?P<price>\d+(\.\d+)?)\!(?P<qty>\d+)($|\s)"
+pattern = r"(^>>)(?P<name>\w+)<<(?P<price>\d+(\.\d+)?)\!(?P<q>\d+)($|\s)"
 output = []
 result = 0
 while text != "Purchase":
@@ -10,7 +10,7 @@ while text != "Purchase":
     if match:
         objects = match.groupdict()
         output.append(objects["name"])
-        result += float(objects["price"]) * int(objects["qty"])
+        result += float(objects["price"]) * int(objects["q"])
     text = input()
 print("Bought furniture:")
 for name in output:

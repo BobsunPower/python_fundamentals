@@ -2,7 +2,7 @@ stat = {}
 ind_stat = {}
 while True:
     data = input()
-    if data == "no more time":
+    if data == "no more t":
         break
     user, con, pts = data.split(" -> ")
     pts = int(pts)

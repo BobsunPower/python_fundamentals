@@ -51,7 +51,7 @@ class Order:
 order = Order()
 while True:
     data = input()
-    if data == 'Once upon a time':
+    if data == 'Once upon a t':
         break
     dwarf_name, color, physics = data.split(' <:> ')
     physics = int(physics)
