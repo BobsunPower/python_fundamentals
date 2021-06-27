@@ -1,6 +1,5 @@
-chars = int(input())
-total = 0
-for i in range(chars):
-    char = input()
-    total += ord(char)
-print(f"The sum equals: {total}")
+rng, tot = int(input()), 0
+for i in range(rng):
+    ltr = input()
+    tot += ord(ltr)
+print(f"The sum equals: {tot}")

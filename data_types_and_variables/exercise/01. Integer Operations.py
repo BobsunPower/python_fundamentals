@@ -1,6 +1,1 @@
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-total = int((a + b) / c) * d
-print(total)
+print(int((int(input()) + int(input())) / int(input())) * int(input()))

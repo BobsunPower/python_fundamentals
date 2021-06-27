@@ -1,4 +1,1 @@
-a = input()
-b = input()
-c = input()
-print(f"{a}{b}{c}")
+print(f"{input()}{input()}{input()}")

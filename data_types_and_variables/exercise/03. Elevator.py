@@ -1,6 +1,2 @@
 from math import ceil
-
-people = int(input())
-capacity = int(input())
-courses = ceil(people / capacity)
-print(courses)
+print(ceil(int(input()) / int(input())))
