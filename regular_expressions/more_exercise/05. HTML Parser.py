@@ -20,8 +20,8 @@ if m:
     body_text = ''.join(re.findall(text_pattern, body_html))
     while '\n' in body_text:
         body_text = body_text.replace('\n', ' ')
-    while '\\n' in body_text:
-        body_text = body_text.replace('\\n', ' ')
+    while '\\rng' in body_text:
+        body_text = body_text.replace('\\rng', ' ')
 
 
 print(f'Title: {head_text}')
