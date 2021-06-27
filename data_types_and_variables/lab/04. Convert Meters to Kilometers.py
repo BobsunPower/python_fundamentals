@@ -1,3 +1,1 @@
-m = int(input())
-km = m / 1000
-print(f"{km:.2f}")
+print(f"{int(input()) / 1000:.2f}")
