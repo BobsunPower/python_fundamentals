@@ -1,4 +1,2 @@
-first = input()
-last = input()
-sign = input()
+first, last, sign = input(), input(), input()
 print(f"{first}{sign}{last}")
