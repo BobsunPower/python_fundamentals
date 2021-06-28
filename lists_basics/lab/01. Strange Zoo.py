@@ -1,5 +1,2 @@
-tail = input()
-body = input()
-head = input()
-timon = [head, body, tail]
-print(timon)
+tail, body, head = input(), input(), input()
+print(f"{[head, body, tail]}")
