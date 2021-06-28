@@ -1,6 +1,4 @@
-lines = int(input())
-lst = []
-for i in range(lines):
-    course = input()
-    lst.append(course)
+rng, lst = int(input()), []
+for _ in range(rng):
+    lst.append(input())
 print(lst)

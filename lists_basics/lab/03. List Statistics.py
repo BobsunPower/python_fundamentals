@@ -1,10 +1,8 @@
-lines = int(input())
-positives = []
-negatives = []
-for i in range(lines):
+rng, pos, neg = int(input()), [], []
+for _ in range(rng):
     n = int(input())
     if n > 0:
-        positives.append(n)
+        pos.append(n)
     else:
-        negatives.append(n)
-print(f"{positives}\n{negatives}\nCount of positives: {len(positives)}. Sum of negatives: {sum(negatives)}")
+        neg.append(n)
+print(f"{pos}\n{neg}\nCount of positives: {len(pos)}. Sum of negatives: {sum(neg)}")
