@@ -1,24 +1,12 @@
-lines = int(input())
-even = []
-odd = []
-negative = []
-positive = []
-for i in range(lines):
-    number = int(input())
-    if number % 2 == 0:
-        even.append(number)
-    else:
-        odd.append(number)
-    if number >= 0:
-        positive.append(number)
-    else:
-        negative.append(number)
-kind = input()
-if kind == "even":
-    print(even)
-elif kind == "odd":
-    print(odd)
-elif kind == "negative":
-    print(negative)
-elif kind == "positive":
-    print(positive)
+rng, lst, out = int(input()), [], []
+[lst.append(int(input())) for _ in range(rng)]
+cmd = input()
+if cmd == "even":
+    [out.append(i) if i % 2 == 0 else "" for i in lst]
+elif cmd == "odd":
+    [out.append(i) if i % 2 == 1 else "" for i in lst]
+elif cmd == "negative":
+    [out.append(i) if i < 0 else "" for i in lst]
+elif cmd == "positive":
+    [out.append(i) if i >= 0 else "" for i in lst]
+print(out)

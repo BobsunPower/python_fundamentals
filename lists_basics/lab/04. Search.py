@@ -1,10 +1,3 @@
-lines = int(input())
-key = input()
-lst = []
-output = []
-for i in range(lines):
-    string = input()
-    lst.append(string)
-    if key in string:
-        output.append(string)
-print(f"{lst}\n{output}")
+rng, key, lst, out = int(input()), input(), [], []
+[lst.append(input()) for _ in range(rng)], print(lst)
+[out.append(i) if key in i else "" for i in lst], print(out)
