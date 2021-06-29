@@ -1,16 +1,12 @@
-lst = input().split()
-a = 11
-b = 11
-terminated = False
-for i in set(lst):
-    lst.append(i)
-    if "A" in i:
+lst, a, b = list(set(input().split())), 11, 11
+for i in range(len(lst)):
+    if "A" in lst[0]:
         a -= 1
     else:
         b -= 1
+    lst.pop(0)
     if a < 7 or b < 7:
-        terminated = True
         break
 print(f"Team A - {a}; Team B - {b}")
-if terminated:
+if a < 7 or b < 7:
     print("Game was terminated")

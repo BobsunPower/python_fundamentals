@@ -1,4 +1,2 @@
-factor = int(input())
-count = int(input())
-output = [factor * i for i in range(1, count + 1)]
-print(output)
+ftr, cnt, lst = int(input()), int(input()), []
+[lst.append(ftr * i) for i in range(1, cnt + 1)], print(lst)
