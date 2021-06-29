@@ -1,11 +1,8 @@
-lst = input().split()
-shuffles = int(input())
-half = len(lst) // 2
-output = []
-for _ in range(shuffles):
-    output = []
-    for i in range(half):
-        output.append(lst[i])
-        output.append(lst[half + i])
-    lst = output
-print(output)
+lst, shl, out = input().split(), int(input()), []
+for _ in range(shl):
+    out = []
+    for i in range(len(lst) // 2):
+        out.append(lst[i])
+        out.append(lst[len(lst) // 2 + i])
+    lst = out
+print(out)
