@@ -1,6 +1,5 @@
 lst = list(map(int, input().split(", ")))
-beggars = int(input())
-output = [0] * beggars
+bgs = [0 for _ in range(int(input()))]
 for i in range(len(lst)):
-    output[i % beggars] += lst[i]
-print(output)
+    bgs[i % len(bgs)] += lst[i]
+print(bgs)
