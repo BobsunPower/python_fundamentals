@@ -1,5 +1,5 @@
-def calculate_area(side_a, side_b):
-    return side_a * side_b
+def calculate_rectangle_area(lth, wth):
+    return lth * wth
 
 
-print(calculate_area(int(input()), int(input())))
+print(calculate_rectangle_area(int(input()), int(input())))
