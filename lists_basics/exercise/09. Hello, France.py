@@ -1,7 +1,7 @@
 lst, bgt, pft, sls = input().split("|"), float(input()), 0, 0
-lst = [i.split("->") for i in lst]
-for i in range(len(lst)):
-    typ, vlu = lst[i][0], float(lst[i][1])
+for i in lst:
+    typ, vlu = i.split("->")
+    vlu = float(vlu)
     vld = (
         (typ == "Clothes" and vlu <= 50 and bgt >= vlu) or
         (typ == "Shoes" and vlu <= 35 and bgt >= vlu) or

@@ -1,9 +1,9 @@
 lst = input().split("#")
-lst = [i.split(" = ") for i in lst]
 wtr, eft, fir = int(input()), 0, 0
 print("Cells:")
-for i in range(len(lst)):
-    lvl, vlu = lst[i][0], int(lst[i][1])
+for i in lst:
+    lvl, vlu = i.split(" = ")
+    vlu = int(vlu)
     vld = (
         (lvl == "High" and vlu in range(81, 126) and wtr >= vlu) or
         (lvl == "Medium" and vlu in range(51, 81) and wtr >= vlu) or

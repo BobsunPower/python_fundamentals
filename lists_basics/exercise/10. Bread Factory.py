@@ -1,33 +1,28 @@
-lst = input().split("|")
-energy = 100
-coins = 100
-bankrupt = False
+lst, nrg, cns = input().split("|"), 100, 100
 for i in lst:
-    order, n = i.split("-")
-    n = int(n)
+    order, vlu = i.split("-")
+    vlu = int(vlu)
     if order == "rest":
-        if energy + n <= 100:
-            energy += n
-            print(f"You gained {n} energy.")
+        if nrg + vlu <= 100:
+            nrg += vlu
+            print(f"You gained {vlu} energy.")
         else:
-            print(f"You gained {100 - energy} energy.")
-            energy = 100
-        print(f"Current energy: {energy}.")
+            print(f"You gained {100 - nrg} energy.")
+            nrg = 100
+        print(f"Current energy: {nrg}.")
     elif order == "order":
-        if energy >= 30:
-            coins += n
-            energy -= 30
-            print(f"You earned {n} coins.")
+        if nrg >= 30:
+            cns += vlu
+            nrg -= 30
+            print(f"You earned {vlu} coins.")
         else:
-            energy += 50
+            nrg += 50
             print("You had to rest!")
     else:
-        coins -= n
-        if coins > 0:
+        cns -= vlu
+        if cns > 0:
             print(f"You bought {order}.")
         else:
-            bankrupt = True
             print(f"Closed! Cannot afford {order}.")
-            break
-if not bankrupt:
-    print(f"Day completed!\nCoins: {coins}\nEnergy: {energy}")
+            exit()
+print(f"Day completed!\nCoins: {cns}\nEnergy: {nrg}")
