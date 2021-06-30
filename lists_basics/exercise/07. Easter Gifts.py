@@ -1,13 +1,13 @@
 lst = input().split()
 while True:
-    order = input().split()
-    if "Money" in order:
+    cmd = input().split()
+    if "Money" in cmd:
         break
-    if "OutOfStock" in order:
-        lst = ["None" if lst[i] == order[1] else lst[i] for i in range(len(lst))]
-    elif "Required" in order:
-        lst = [order[1] if i == int(order[2]) else lst[i] for i in range(len(lst))]
-    elif "JustInCase" in order:
-        lst = [order[1] if lst[i] == lst[-1] else lst[i] for i in range(len(lst))]
+    if "OutOfStock" in cmd:
+        lst = ["None" if lst[i] == cmd[1] else lst[i] for i in range(len(lst))]
+    elif "Required" in cmd:
+        lst = [cmd[1] if i == int(cmd[2]) else lst[i] for i in range(len(lst))]
+    elif "JustInCase" in cmd:
+        lst[-1] = cmd[1]
 lst = [lst[i] for i in range(len(lst)) if not lst[i] == "None"]
-print(" ".join([str(i) for i in lst]))
+print(" ".join(lst))
