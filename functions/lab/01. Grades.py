@@ -1,14 +1,14 @@
-def grade_word(score):
-    if 2.00 <= score < 3.00:
+def grades(num):
+    if 2.00 <= num < 3.00:
         return "Fail"
-    if 3.00 <= score < 3.50:
+    elif 3.00 <= num < 3.50:
         return "Poor"
-    if 3.50 <= score < 4.50:
+    elif 3.50 <= num < 4.50:
         return "Good"
-    if 4.50 <= score < 5.50:
+    elif 4.50 <= num < 5.50:
         return "Very Good"
-    if 5.50 <= score <= 6.00:
+    elif 5.50 <= num <= 6.00:
         return "Excellent"
 
 
-print(grade_word(float(input())))
+print(grades(float(input())))

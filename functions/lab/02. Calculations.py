@@ -1,12 +1,12 @@
-def calculate(action, x, y):
-    if action == "multiply":
+def calculations(act, x, y):
+    if act == "multiply":
         return x * y
-    if action == "divide":
+    elif act == "divide":
         return x // y
-    if action == "add":
+    elif act == "add":
         return x + y
-    if action == "subtract":
+    elif act == "subtract":
         return x - y
 
 
-print(calculate(input(), int(input()), int(input())))
+print(calculations(input(), int(input()), int(input())))
