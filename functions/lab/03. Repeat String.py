@@ -1,5 +1,5 @@
-def clone(string, repetitions):
-    return string * repetitions
+def repeat_string(txt, mul):
+    return txt * mul
 
 
-print(clone(input(), int(input())))
+print(repeat_string(input(), int(input())))

@@ -1,13 +1,12 @@
-def calculate_price(stock, quantity):
-    if stock == "coffee":
-        return quantity * 1.5
-    if stock == "water":
-        return quantity * 1
-    if stock == "coke":
-        return quantity * 1.4
-    if stock == "snacks":
-        return quantity * 2
+def orders(itm, qty):
+    if itm == "coffee":
+        return f"{1.5 * qty:.2f}"
+    elif itm == "water":
+        return f"{qty:.2f}"
+    elif itm == "coke":
+        return f"{1.4 * qty:.2f}"
+    elif itm == "snacks":
+        return f"{2 * qty:.2f}"
 
 
-price = calculate_price(input(), int(input()))
-print(f"{price:.2f}")
+print(orders(input(), int(input())))
