@@ -1,5 +1,5 @@
-def find_smallest(x, y, z):
-    print(min(x, y, z))
+def smallest_of_three_numbers(x, y, z):
+    return min(x, y, z)
 
 
-find_smallest(int(input()), int(input()), int(input()))
+print(smallest_of_three_numbers(int(input()), int(input()), int(input())))

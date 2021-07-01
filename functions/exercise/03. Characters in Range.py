@@ -1,10 +1,5 @@
-def ascii_range(start, stop):
-    output = ""
-    for i in range(ord(start) + 1, ord(stop)):
-        output += (chr(i))
-        if not i == ord(stop) - 1:
-            output += " "
-    print(output)
+def characters_in_range(x, y):
+    return " ".join([chr(i) for i in range(ord(x) + 1, ord(y))])
 
 
-ascii_range(input(), input())
+print(characters_in_range(input(), input()))
