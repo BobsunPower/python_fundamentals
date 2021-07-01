@@ -1,12 +1,7 @@
-def sum_digits(number):
-    odd = 0
-    even = 0
-    for i in range(len(number)):
-        if int(number[i]) % 2 == 0:
-            even += int(number[i])
-        else:
-            odd += int(number[i])
-    print(f"Odd sum = {odd}, Even sum = {even}")
+def odd_and_even_sum(dgs):
+    odd = [int(dgs[i]) for i in range(len(dgs)) if int(dgs[i]) % 2 == 1]
+    even = [int(dgs[i])for i in range(len(dgs)) if int(dgs[i]) % 2 == 0]
+    print(f"Odd sum = {sum(odd)}, Even sum = {sum(even)}")
 
 
-sum_digits(input())
+odd_and_even_sum(input())
