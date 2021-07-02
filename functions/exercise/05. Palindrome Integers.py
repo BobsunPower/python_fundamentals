@@ -1,10 +1,7 @@
-def palindrome_finder():
-    lst = input().split(", ")
-    for i in lst:
-        if i == i[::-1]:
-            print("True")
-        else:
-            print("False")
+def palindrome_integers(txt):
+    lst = txt.split(", ")
+    out = ["True" if i == i[::-1] else "False" for i in lst]
+    return print("\n".join([i for i in out]))
 
 
-palindrome_finder()
+palindrome_integers(input())
