@@ -1,20 +1,18 @@
-def check_password(password):
-    length = 6 <= len(password) <= 10
-    digits = 0
-    letters = 0
-    for i in password:
-        if i.isdigit():
-            digits += 1
-        elif i.isalpha():
-            letters += 1
-    if length and len(password) == digits + letters and digits >= 2:
-        print("Password is valid")
-    if not length:
+def password_validator(pas):
+    vld = True
+    dgs = len([i for i in pas if i.isdigit()])
+    alp = len([i for i in pas if i.isalpha()])
+    if not 6 <= len(pas) <= 10:
+        vld = False
         print("Password must be between 6 and 10 characters")
-    if not len(password) == digits + letters:
+    if not len(pas) == dgs + alp:
+        vld = False
         print("Password must consist only of letters and digits")
-    if not digits >= 2:
+    if not dgs >= 2:
+        vld = False
         print("Password must have at least 2 digits")
+    if vld:
+        print("Password is valid")
 
 
-check_password(input())
+password_validator(input())
