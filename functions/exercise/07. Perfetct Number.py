@@ -1,12 +1,12 @@
-def perfect_number_finder(number):
-    divisors = 0
-    for i in range(1, number):
-        if number % i == 0:
-            divisors += i
-    if divisors == number:
-        print("We have a perfect percent!")
+def perfect_number(n):
+    dvs = 0
+    for i in range(1, n):
+        if n % i == 0:
+            dvs += i
+    if dvs == n:
+        print(" We have a perfect number!")
     else:
-        print("It'y not so perfect.")
+        print("It's not so perfect.")
 
 
-perfect_number_finder(int(input()))
+perfect_number(int(input()))

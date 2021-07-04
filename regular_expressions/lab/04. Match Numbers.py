@@ -1,7 +1,7 @@
 # TODO
 import re
-pattern = r'(^|(?<=\s))(?P<num>-?\d+(\.[\d]+)?)($|(?=\s))'
+pattern = r'(^|(?<=\s))(?P<n>-?\d+(\.[\d]+)?)($|(?=\s))'
 data = input()
 matches = re.finditer(pattern, data)
-numbers = [n.group('num') for n in matches]
+numbers = [n.group('n') for n in matches]
 print(*numbers)
