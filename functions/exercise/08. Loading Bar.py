@@ -1,14 +1,12 @@
-def loading_bar(percent):
-    bar = "["
-    bar += "%" * (percent // 10)
-    bar += "." * ((100 - percent) // 10)
-    bar += "]"
-    if not percent == 100:
-        print(f"{percent}% {bar}")
+def loading_bar(n):
+    if n < 100:
+        n = n // 10
+        bar = ("%" * n) + ((10 - n) * ".")
+        print(f"{n * 10}% [{bar}]")
         print("Still loading...")
     else:
         print("100% Complete!")
-        print(f"{bar}")
+        print("[%%%%%%%%%%]")
 
 
 loading_bar(int(input()))
