@@ -1,8 +1,8 @@
 from math import factorial
 
 
-def factorial_and_divide(number, divisor):
-    print(f"{(factorial(number) / factorial(divisor)):.2f}")
+def factorial_division(num, dvd):
+    print(f"{(factorial(num) / factorial(dvd)):.2f}")
 
 
-factorial_and_divide(int(input()), int(input()))
+factorial_division(int(input()), int(input()))

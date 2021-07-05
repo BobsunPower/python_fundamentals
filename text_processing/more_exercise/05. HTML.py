@@ -11,9 +11,9 @@ def print_content(text):
 
 
 def print_comment(text):
-    print("<div>")
+    print("<dvd>")
     print(f"    {text}")
-    print("</div>")
+    print("</dvd>")
 
 
 title, content, comment = input(), input(), input()
