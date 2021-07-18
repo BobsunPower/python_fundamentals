@@ -1,150 +1,76 @@
-def exchange(lst, idx):
-    if idx <= -1 or idx >= len(lst):
-        print("Invalid index")
-        return lst
-    lst = lst[idx + 1:] + lst[:idx + 1]
-    return lst
+def exchange(arr, i):
+    if 0 <= i < len(arr):
+        return arr[i + 1:] + arr[:i + 1]
+    print('Invalid index')
 
 
-def max_even(lst):
-    found = False
-    idx = None
-    max_even_num = 0
-    for i in range(len(lst)):
-        if lst[i] % 2 == 0:
-            found = True
-            if lst[i] >= max_even_num:
-                max_even_num = lst[i]
-                idx = i
-    if not found:
-        return "No matches"
+def max_even(arr):
+    evn_num = -1
+    evn_idx = -1
+    for i in range(len(arr)):
+        if arr[i] >= evn_num and arr[i] % 2 == 0:
+            evn_num = arr[i]
+            evn_idx = i
+    if evn_idx >= 0:
+        print(evn_idx)
     else:
-        return idx
+        print("No matches")
 
 
-def max_odd(lst):
-    found = False
-    idx = None
-    max_odd_num = 0
-    for i in range(len(lst)):
-        if lst[i] % 2 != 0:
-            found = True
-            if lst[i] >= max_odd_num:
-                max_odd_num = lst[i]
-                idx = i
-    if not found:
-        return "No matches"
+def max_odd(arr):
+    odd_num = -1
+    odd_idx = -1
+    for i in range(len(arr)):
+        if arr[i] >= odd_num and arr[i] % 2 == 1:
+            odd_num = arr[i]
+            odd_idx = i
+    if odd_idx >= 0:
+        print(odd_idx)
     else:
-        return idx
+        print("No matches")
 
 
-def min_even(lst):
-    found = False
-    idx = None
-    min_even_num = 1001
-    for i in range(len(lst)):
-        if lst[i] % 2 == 0:
-            found = True
-            if lst[i] <= min_even_num:
-                min_even_num = lst[i]
-                idx = i
-    if not found:
-        return "No matches"
+def min_even(arr):
+    evn_num = 1001
+    evn_idx = 1001
+    for i in range(len(arr)):
+        if arr[i] <= evn_num and arr[i] % 2 == 0:
+            evn_num = arr[i]
+            evn_idx = i
+    if evn_idx < 1001:
+        print(evn_idx)
     else:
-        return idx
+        print("No matches")
 
 
-def min_odd(lst):
-    found = False
-    idx = None
-    min_odd_num = 1001
-    for i in range(len(lst)):
-        if lst[i] % 2 != 0:
-            found = True
-            if lst[i] <= min_odd_num:
-                min_odd_num = lst[i]
-                idx = i
-    if not found:
-        return "No matches"
+def min_odd(arr):
+    odd_num = 1001
+    odd_idx = 1001
+    for i in range(len(arr)):
+        if arr[i] <= odd_num and arr[i] % 2 == 1:
+            odd_num = arr[i]
+            odd_idx = i
+    if odd_idx < 1001:
+        print(odd_idx)
     else:
-        return idx
+        print("No matches")
 
 
-def first_even(lst, count):
-    res = []
-    if count > len(lst) or count <= 0:
-        return "Invalid count"
-    for num in lst:
-        if num % 2 == 0 and count > 0:
-            res.append(num)
-            count -= 1
-    return res
-
-
-def first_odd(lst, count):
-    res = []
-    if count > len(lst) or count <= 0:
-        return "Invalid count"
-    for num in lst:
-        if num % 2 != 0 and count > 0:
-            res.append(num)
-            count -= 1
-    return res
-
-
-def last_even(lst, count):
-    res = []
-    if count > len(lst) or count <= 0:
-        return "Invalid count"
-    for index in range(len(lst) - 1, -1, -1):
-        if lst[index] % 2 == 0 and count > 0:
-            res.append(lst[index])
-            count -= 1
-    res = res[::-1]
-    return res
-
-
-def last_odd(lst, count):
-    res = []
-    if count > len(lst) or count <= 0:
-        return "Invalid count"
-    for index in range(len(lst) - 1, -1, -1):
-        if lst[index] % 2 != 0 and count > 0:
-            res.append(lst[index])
-            count -= 1
-    res = res[::-1]
-    return res
-
-
-def array_manipulator():
-    num_lst = list(map(int, input().split()))
-    while True:
-        cmd = input().split()
-        if cmd[0] == "end":
-            print(num_lst)
-            break
-        elif cmd[0] == "exchange":
-            num_lst = exchange(num_lst, int(cmd[1]))
-        elif cmd[0] == "max":
-            if cmd[1] == "even":
-                print(max_even(num_lst))
-            elif cmd[1] == "odd":
-                print(max_odd(num_lst))
-        elif cmd[0] == "min":
-            if cmd[1] == "even":
-                print(min_even(num_lst))
-            elif cmd[1] == "odd":
-                print(min_odd(num_lst))
-        elif cmd[0] == "first":
-            if cmd[2] == "even":
-                print(first_even(num_lst, int(cmd[1])))
-            elif cmd[2] == "odd":
-                print(first_odd(num_lst, int(cmd[1])))
-        elif cmd[0] == "last":
-            if cmd[2] == "even":
-                print(last_even(num_lst, int(cmd[1])))
-            elif cmd[2] == "odd":
-                print(last_odd(num_lst, int(cmd[1])))
-
-
-array_manipulator()
+lst = list(map(int, input().split()))
+while True:
+    cmd = input().split()
+    if cmd[0] == "end":
+        break
+    if cmd[0] == "exchange":
+        idx = int(cmd[1])
+        lst = exchange(lst, idx)
+    elif cmd[0] == "max":
+        if cmd[1] == "even":
+            max_even(lst)
+        elif cmd[1] == "odd":
+            max_odd(lst)
+    elif cmd[0] == "min":
+        if cmd[1] == "even":
+            min_even(lst)
+        elif cmd[1] == "odd":
+            min_odd(lst)
