@@ -1,7 +1,7 @@
-todo_lst = []
+lst = []
 while True:
     cmd = input().split("-")
     if cmd[0] == "End":
         break
-    todo_lst.append((int(cmd[0]), cmd[1]))
-print([task for idx, task in sorted(todo_lst)])
+    lst.append((int(cmd[0]), cmd[1]))
+print([t for i, t in sorted(lst)])
