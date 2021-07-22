@@ -1,25 +1,18 @@
-lst = list(map(int, input().split("@")))
-idx = 0
-val_day = 0
+lst, vtn, i = list(map(int, input().split("@"))), 0, 0
 while True:
-    cmd = [int(ch) if ch.isdigit() else str(ch) for ch in input().split()]
-    if "Love!" in cmd:
+    cmd = input().split()
+    if cmd[0] == "Love!":
         break
-    else:
-        length = cmd[1]
-        idx += length
-        if idx > len(lst) - 1:
-            idx = 0
-        if lst[idx] == 0:
-            print(f"Place {idx} already had Valentine's day.")
-        else:
-            lst[idx] -= 2
-            if lst[idx] == 0:
-                print(f"Place {idx} has Valentine's day.")
-                val_day += 1
-print(f"Cupid's last position was {idx}.")
-if val_day == len(lst):
-    print('Mission was successful.')
+    i += int(cmd[1])
+    i = 0 if i >= len(lst) else i
+    lst[i] -= 2
+    if lst[i] < 0:
+        print(f"Place {i} already had Valentine's day.")
+    if lst[i] == 0:
+        print(f"Place {i} has Valentine's day.")
+        vtn += 1
+print(f"Cupid's last position was {i}.")
+if len(lst) == vtn:
+    print("Mission was successful.")
 else:
-    no_val = len(lst) - val_day
-    print(f'Cupid has failed {no_val} places.')
+    print(f"Cupid has failed {len(lst) - vtn} places.")

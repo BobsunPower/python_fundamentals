@@ -1,23 +1,18 @@
-inv = input().split(", ")
+lst = input().split(", ")
 while True:
     cmd = input().split(" - ")
     if cmd[0] == "Craft!":
         break
-    act = cmd[0]
-    itm = cmd[1]
+    act, itm = cmd[0], cmd[1]
     if act == "Collect":
-        if itm not in inv:
-            inv.append(itm)
+        itm not in lst and lst.append(itm)
     elif act == "Drop":
-        if itm in inv:
-            inv.remove(itm)
+        itm in lst and lst.remove(itm)
     elif act == "Combine Items":
         old, new = itm.split(":")
-        if old in inv:
-            pos = inv.index(old) + 1
-            inv.insert(pos, new)
+        old in lst and lst.insert(lst.index(old) + 1, new)
     elif act == "Renew":
-        if itm in inv:
-            inv.remove(itm)
-            inv.append(itm)
-print(", ".join(inv))
+        if itm in lst:
+            lst.remove(itm)
+            lst.append(itm)
+print(", ".join(lst))
