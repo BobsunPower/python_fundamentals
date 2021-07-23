@@ -7,6 +7,6 @@ party = Party()
 while True:
     cmd = input()
     if cmd == "End":
+        print(f"Going: {', '.join(party.people)}\nTotal: {len(party.people)}")
         break
     party.people.append(cmd)
-print(f"Going: {', '.join(party.people)}\nTotal: {len(party.people)}")
