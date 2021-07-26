@@ -1,8 +1,6 @@
 class Town:
     def __init__(self, name):
-        self.name = name
-        self.latitude = ""
-        self.longitude = ""
+        self.name, self.latitude, self.longitude = name, "", ""
 
     def set_latitude(self, latitude):
         self.latitude = latitude
