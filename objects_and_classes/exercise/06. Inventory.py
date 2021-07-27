@@ -1,8 +1,6 @@
 class Inventory:
     def __init__(self, capacity):
-        self.__capacity = capacity
-        self.left_capacity = capacity
-        self.items = []
+        self.__capacity, self.left_capacity, self.items = capacity, capacity, []
 
     def add_item(self, item):
         if self.left_capacity > 0:
