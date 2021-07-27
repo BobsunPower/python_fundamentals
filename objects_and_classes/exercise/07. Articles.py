@@ -1,8 +1,6 @@
 class Article:
     def __init__(self, title, content, author):
-        self.title = title
-        self.content = content
-        self.author = author
+        self.title, self.content, self.author = title, content, author
 
     def edit(self, new_content):
         self.content = new_content
