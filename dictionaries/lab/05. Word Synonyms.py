@@ -1,11 +1,7 @@
 from collections import defaultdict
-
-syn_dic = defaultdict(list)
-n = int(input())
-for _ in range(n):
-    wrd = input()
-    syn = input()
-    syn_dic[wrd].append(syn)
-for wrd, syn_dic in syn_dic.items():
-    sys = ", ".join(syn_dic)
-    print(f"{wrd} - {sys}")
+dic = defaultdict(list)
+for i in range(int(input())):
+    wrd, syn = input(), input()
+    dic[wrd].append(syn)
+for i, j in dic.items():
+    print(f"{i} - {', '.join(j)}")
