@@ -1,15 +1,10 @@
-goods = {}
+from collections import defaultdict
+dic = defaultdict(int)
 while True:
-    cmd = input()
-    if cmd == "statistics":
+    cmd = input().split(": ")
+    if cmd[0] == "statistics":
         break
-    food, qty = cmd.split(": ")
-    if food not in goods:
-        goods[food] = int(qty)
-    else:
-        goods[food] += int(qty)
-print("Products in stock:")
-for food, qty in goods.items():
-    print(f"- {food}: {qty}")
-print(f"Total Products: {len(goods)}")
-print(f"Total Quantity: {sum(goods.values())}")
+    itm, qty = cmd[0], int(cmd[1])
+    dic[itm] += int(qty)
+print("Products in stock:"), [print(f"- {i}: {j}") for i, j in dic.items()]
+print(f"Total Products: {len(dic)}\nTotal Quantity: {sum(dic.values())}")
