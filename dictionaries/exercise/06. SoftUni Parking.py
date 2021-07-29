@@ -1,19 +1,17 @@
-n = int(input())
-park = {}
-for _ in range(n):
+dic = {}
+for _ in range(int(input())):
     cmd = input().split()
-    name = cmd[1]
+    usr = cmd[1]
     if cmd[0] == "register":
-        reg_num = cmd[2]
-        if name in park:
-            print(f"ERROR: already registered with plate number {reg_num}")
-        else:
-            park[name] = reg_num
-            print(f"{name} registered {reg_num} successfully")
+        if usr in dic:
+            print(f"ERROR: already registered with plate number {cmd[2]}")
+            continue
+        dic[usr] = cmd[2]
+        print(f"{usr} registered {cmd[2]} successfully")
     elif cmd[0] == "unregister":
-        if name not in park:
-            print(f'ERROR: user {name} not found')
-        else:
-            print(f'{name} unregistered successfully')
-            del park[name]
-print('\n'.join([f'{k} => {v}' for k, v in park.items()]))
+        if usr not in dic:
+            print(f'ERROR: user {usr} not found')
+            continue
+        print(f'{usr} unregistered successfully')
+        del dic[usr]
+print('\n'.join([f'{k} => {v}' for k, v in dic.items()]))

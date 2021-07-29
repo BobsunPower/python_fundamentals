@@ -3,7 +3,6 @@ dic = defaultdict(int)
 while True:
     cmd = input()
     if cmd == "stop":
-        for i, j in dic.items():
-            print(f"{i} -> {j}")
+        print("\n".join(f"{i} -> {j}" for i, j in dic.items()))
         break
     dic[cmd] += int(input())

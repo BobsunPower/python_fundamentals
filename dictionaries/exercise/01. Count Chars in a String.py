@@ -3,5 +3,4 @@ txt, dic = input(), defaultdict(int)
 for i in txt:
     if not i.isspace():
         dic[i] += 1
-for i, j in dic.items():
-    print(f"{i} -> {j}")
+print("\n".join(f"{i} -> {j}" for i, j in dic.items()))
