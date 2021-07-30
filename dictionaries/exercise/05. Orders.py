@@ -1,16 +1,12 @@
-goods = {}
+dic = {}
 while True:
-    data = input()
-    if data == 'buy':
+    cmd = input()
+    if cmd == "buy":
+        print("\n".join(f"{i} -> {j['price'] * j['quantity']:.2f}" for i, j in dic.items()))
         break
-    name, price, qty = data.split(' ')
-    price, qty = float(price), int(qty)
-    if name not in goods:
-        goods[name] = {'price': price, 'quantity': qty}
-    else:
-        goods[name]['quantity'] += qty
-        if goods[name]['price'] != price:
-            goods[name]['price'] = price
-for k, v in goods.items():
-    total = v['price'] * v['quantity']
-    print(f'{k} -> {total:.2f}')
+    pdt, prz, qty = cmd.split()
+    if pdt not in dic:
+        dic[pdt] = {"price": float(prz), "quantity": int(qty)}
+        continue
+    dic[pdt]['price'] = float(prz)
+    dic[pdt]["quantity"] += int(qty)
