@@ -1,15 +1,9 @@
-n = int(input())
-stds = {}
-out = {}
-for _ in range(n):
-    name = input()
-    grd = float(input())
-    if name not in stds:
-        stds[name] = []
-    stds[name].append(grd)
-for name, grd in stds.items():
-    res = sum(grd) / len(grd)
-    if res >= 4.5:
-        out[name] = res
-for name, res in sorted(out.items(), key=lambda x: x[1], reverse=True):
-    print(f"{name} -> {res:.2f}")
+from collections import defaultdict
+from statistics import mean
+dic, out, std = defaultdict(list), defaultdict(list), None
+for i in range(int(input())):
+    std, grd = input(), float(input())
+    dic[std].append(grd)
+[out[std].append(mean(i)) for i in dic.values() if mean(i) >= 4.5]
+[print(f"{name} -> {mean(res):.2f}") for name, res in sorted(out.items(), key=lambda x: x[1], reverse=True)]
+
