@@ -1,11 +1,11 @@
 def calculations(act, x, y):
     if act == "multiply":
         return x * y
-    elif act == "divide":
+    if act == "divide":
         return x // y
-    elif act == "add":
+    if act == "add":
         return x + y
-    elif act == "subtract":
+    if act == "subtract":
         return x - y
 
 
