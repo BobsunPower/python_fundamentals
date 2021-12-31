@@ -1,7 +1,6 @@
-def odd_and_even_sum(dgs):
-    odd = [int(dgs[i]) for i in range(len(dgs)) if int(dgs[i]) % 2 == 1]
-    even = [int(dgs[i])for i in range(len(dgs)) if int(dgs[i]) % 2 == 0]
-    print(f"Odd sum = {sum(odd)}, Even sum = {sum(even)}")
+def odd_and_even_sum(num):
+    return f"Odd sum = {sum([int(i) for i in num if int(i) % 2 == 1])}, \
+Even sum = {sum([int(i) for i in num if int(i) % 2 == 0])}"
 
 
-odd_and_even_sum(input())
+print(odd_and_even_sum(input()))
