@@ -1,12 +1,7 @@
 def loading_bar(n):
-    if n < 100:
-        n = n // 10
-        bar = ("%" * n) + ((10 - n) * ".")
-        print(f"{n * 10}% [{bar}]")
-        print("Still loading...")
-    else:
-        print("100% Complete!")
-        print("[%%%%%%%%%%]")
+    if n == 100:
+        return print(f"100% Complete!\n[{'%' * 10}]")
+    print(f"{n}% [{'%' * (n // 10)}{'.' * (10 - (n // 10))}]\nStill loading...")
 
 
 loading_bar(int(input()))
