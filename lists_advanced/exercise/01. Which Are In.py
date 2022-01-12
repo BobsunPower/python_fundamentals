@@ -1,2 +1,2 @@
-sbs, txt = input().split(", "), input()
-print([i for i in sbs if i in txt])
+wds, lst = input().split(", "), input()
+print([i for i in wds if i in lst])
