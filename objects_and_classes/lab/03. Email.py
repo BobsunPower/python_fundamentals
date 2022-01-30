@@ -1,12 +1,12 @@
 class Email:
-    def __init__(self, sdr, rvr, cnt, is_sent=False):
-        self.sdr, self.rvr, self.cnt, self.is_sent = sdr, rvr, cnt, is_sent
+    def __init__(self, sdr, rvr, cnt, snt=False):
+        self.sdr, self.rvr, self.cnt, self.snt = sdr, rvr, cnt, snt
 
     def send(self):
-        self.is_sent = True
+        self.snt = True
 
     def get_info(self):
-        return f"{self.sdr} says to {self.rvr}: {self.cnt}. Sent: {self.is_sent}"
+        print(f"{self.sdr} says to {self.rvr}: {self.cnt}. Sent: {self.snt}")
 
 
 mails = []
@@ -18,5 +18,4 @@ while True:
     email = Email(sender, receiver, content)
     mails.append(email)
 idx = list(map(int, input().split(", ")))
-[mails[i].send() for i in idx]
-[print(i.get_info()) for i in mails]
+[mails[i].send() for i in idx], [i.get_info() for i in mails]
