@@ -4,7 +4,7 @@ class Class:
     def __init__(self, name):
         self.name, self.students, self.grades = name, [], []
 
-    def add_student(self, name: str, grade: float):
+    def add_student(self, name, grade: float):
         if len(self.students) < Class.__students_count:
             self.students.append(name), self.grades.append(grade)
 
