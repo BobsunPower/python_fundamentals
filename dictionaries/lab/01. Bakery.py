@@ -1,2 +1,3 @@
-lst = input().split()
-print({lst[i]: int(lst[i + 1]) for i in range(0, len(lst), 2)})
+lst, pdt, qty = input().split(), [], []
+[pdt.append(j) if i % 2 == 0 else qty.append(int(j)) for i, j in enumerate(lst)]
+print({k: v for k, v in zip(pdt, qty)})
