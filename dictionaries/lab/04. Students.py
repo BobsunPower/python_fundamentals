@@ -3,8 +3,7 @@ dic = defaultdict(list)
 while True:
     cmd = input()
     if len(cmd.split(":")) < 3:
-        cmd = " ".join(cmd.split("_"))
-        [print(f"{i} - {j}") for i, j in dic[cmd]]
+        [print(f"{k} - {v}") for k, v in dic[" ".join(cmd.split("_"))]]
         break
     std, num, crs = cmd.split(":")
     dic[crs].append([std, num])
