@@ -1,2 +1,1 @@
-dic = zip(input().split(", "), input().split(", "))
-print("\n".join([f"{i} -> {j}" for i, j in list(dic)]))
+[print(f"{k} -> {v}") for k, v in dict(zip(input().split(", "), input().split(", "))).items()]
