@@ -1,17 +1,17 @@
 dic = {}
-for _ in range(int(input())):
+for i in range(int(input())):
     cmd = input().split()
     usr = cmd[1]
-    if cmd[0] == "register":
-        if usr in dic:
-            print(f"ERROR: already registered with plate number {cmd[2]}")
-            continue
-        dic[usr] = cmd[2]
-        print(f"{usr} registered {cmd[2]} successfully")
-    elif cmd[0] == "unregister":
+    if len(cmd) == 3:
         if usr not in dic:
-            print(f'ERROR: user {usr} not found')
-            continue
-        print(f'{usr} unregistered successfully')
-        del dic[usr]
-print('\n'.join([f'{k} => {v}' for k, v in dic.items()]))
+            dic[usr] = cmd[2]
+            print(f"{usr} registered {cmd[2]} successfully")
+        else:
+            print(f"ERROR: already registered with plate number {cmd[2]}")
+    else:
+        if usr in dic:
+            del dic[usr]
+            print(f"{usr} unregistered successfully")
+        else:
+            print(f"ERROR: user {usr} not found")
+[print(f"{k} => {v}") for k, v in dic.items()]
