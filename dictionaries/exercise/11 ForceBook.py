@@ -1,24 +1,55 @@
-users = {}
-out = {}
+# Reworked version. 100 Judge pts.
+dic_frs, dic_usr = {}, {}
 while True:
-    data = input()
-    if data == "Lumpawaroo":
+    cmd = input()
+    if cmd == 'Lumpawaroo':
         break
-    if " | " in data:
-        side, user = data.split(" | ")
-        if user not in users:
-            users[user] = side
-    if " -> " in data:
-        user, side = data.split(" -> ")
-        users[user] = side
-        print(f"{user} joins the {side} side!")
-for user, side in users.items():
-    if side not in out:
-        out[side] = []
-        out[side].append(user)
+    elif '|' in cmd:
+        frs, usr = cmd.split(' | ')
+        if usr not in dic_usr:
+            dic_usr[usr] = frs
+            if frs not in dic_frs:
+                dic_frs[frs] = [usr]
+            else:
+                dic_frs[frs].append(usr)
     else:
-        out[side].append(user)
-out = dict(sorted(out.items(), key=lambda x: (-len(x[1]), x[0])))
-for k, v in out.items():
-    print(f"Side: {k}, Members: {len(v)}")
-    [print(f"! {name}") for name in sorted(v)]
+        usr, frs = cmd.split(' -> ')
+        if usr in dic_usr:
+            dic_frs[dic_usr[usr]].remove(usr)
+            dic_usr[usr] = frs
+            if frs in dic_frs:
+                dic_frs[frs].append(usr)
+            else:
+                dic_frs[frs] = [usr]
+        else:
+            if frs in dic_frs:
+                dic_usr[usr] = frs
+                dic_frs[frs].append(usr)
+            else:
+                dic_frs[frs] = [usr]
+        print(f"{usr} joins the {frs} side!")
+for k, v in dic_frs.items():
+    if len(v):
+        print(f"Side: {k}, Members: {len(v)}")
+        for u in v:
+            print(f'! {u}')
+# My style version. 80/100 Judge pts.
+# from collections import defaultdict
+# dic, frs, usr = defaultdict(list), None, None
+# while True:
+#     cmd = input()
+#     if cmd == "Lumpawaroo":
+#         break
+#     if " | " in cmd:
+#         frs, usr = cmd.split(" | ")
+#         if [usr] not in dic.values():
+#             dic[frs].append(usr)
+#     else:
+#         usr, frs = cmd.split(" -> ")
+#         if [usr] in dic.values():
+#             dic = {k: v for k, v in dic.items() if v != [usr]}
+#         dic[frs].append(usr)
+#         print(f"{usr} joins the {frs} side!")
+# for f in dic:
+#     print(f"Side: {f}, Members: {len(dic[f])}")
+#     [print(f"! {u}") for u in dic[f]]
