@@ -1,26 +1,14 @@
-out = {}
-sub = {}
+from collections import defaultdict
+dic_exm, dic_sts, ban = defaultdict(int), {}, []
 while True:
-    data = input()
-    if data == "exam finished":
+    cmd = input()
+    if cmd == "exam finished":
         break
-    data = data.split("-")
-    if len(data) == 3:
-        std, lng, res = data[0], data[1], int(data[2])
-        if std not in out:
-            out[std] = res
-        if out[std] < res:
-            out[std] = res
-        if lng not in sub:
-            sub[lng] = 1
-        else:
-            sub[lng] += 1
-    else:
-        std = data[0]
-        del out[std]
-print("Results:")
-for std, res in sorted(out.items(), key=lambda x: (-x[1], x[0])):
-    print(f"{std} | {res}")
-print("Submissions:")
-for lng, num in sorted(sub.items()):
-    print(f"{lng} - {num}")
+    if "banned" in cmd.split("-"):
+        ban.append(cmd.split("-")[0])
+        continue
+    std, lng, pts = cmd.split("-")
+    dic_exm[lng] += 1
+    dic_sts[std] = max(dic_sts.get(std, 0), int(pts))
+print("Results:"), [print(f"{k} | {v}") for k, v in dic_sts.items() if k not in ban]
+print("Submissions:"), [print(f"{k} - {v}") for k, v in dic_exm.items()]
