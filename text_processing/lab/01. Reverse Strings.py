@@ -1,5 +1,5 @@
 while True:
-    wrd = input()
-    if wrd == "end":
+    txt = input()
+    if txt == "end":
         break
-    print(f"{wrd} = {wrd[::-1]}")
+    print(f"{txt} = {txt[::-1]}")
