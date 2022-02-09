@@ -1,1 +1,1 @@
-print("".join([i * len(i) for i in input().split()]))
+[print(i * len(i), end="") for i in input().split()]
