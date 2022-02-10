@@ -1,5 +1,5 @@
-ban, txt = input().split(", "), input()
-for wrd in ban:
-    if wrd in txt:
-        txt = txt.replace(wrd, "*" * len(wrd))
+lst, txt = input().split(", "), input()
+for ban in lst:
+    while ban in txt:
+        txt = txt.replace(ban, len(ban) * "*")
 print(txt)
