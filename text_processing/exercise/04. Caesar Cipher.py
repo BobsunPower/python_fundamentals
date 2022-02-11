@@ -1,10 +1,1 @@
-# TODO
-def caesar(txt: str):
-    out = ''
-    for c in txt:
-        out += chr(ord(c) + 3)
-    return out
-
-
-text = input()
-print(caesar(text))
+[print(chr(ord(i) + 3), end="") for i in input()]
