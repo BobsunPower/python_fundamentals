@@ -1,10 +1,9 @@
-txt = input()
-dgt, ltr, otr = "", "", ""
-for ch in txt:
-    if ch.isdigit():
-        dgt += ch
-    elif ch.isalpha():
-        ltr += ch
+dgs, lts, ors = "", "", ""
+for i in input():
+    if i.isdigit():
+        dgs += i
+    elif i.isalpha():
+        lts += i
     else:
-        otr += ch
-print(dgt, ltr, otr, sep='\n')
+        ors += i
+print(dgs, lts, ors, sep="\n")
