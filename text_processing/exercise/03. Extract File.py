@@ -1,4 +1,2 @@
-data = input().split('\\')
-file, ext = data[-1].split('.')
-print(f'File name: {file}')
-print(f'File extension: {ext}')
+n, e = input().split("\\")[-1].split(".")
+print(f"File name: {n}\nFile extension: {e}")
