@@ -1,15 +1,11 @@
-left, right = input().split()
-tot = 0
-for i in range(min(len(left), len(right))):
-    lft_ord = ord(left[i])
-    rgt_ord = ord(right[i])
-    tot += lft_ord * rgt_ord
-if len(left) > len(right):
-    rest = left[len(right):]
-    for vlu in rest:
-        tot += ord(vlu)
-elif len(left) < len(right):
-    rest = right[len(left):]
-    for vlu in rest:
-        tot += ord(vlu)
-print(tot)
+fst, sec = input().split()
+out = 0
+for i in range(min(len(fst), len(sec))):
+    out += ord(fst[i]) * ord(sec[i])
+if len(fst) > len(sec):
+    for i in fst[len(sec):]:
+        out += ord(i)
+elif len(fst) < len(sec):
+    for i in sec[len(fst):]:
+        out += ord(i)
+print(out)
