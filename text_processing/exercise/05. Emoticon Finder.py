@@ -1,8 +1,2 @@
-# TODO
-text = input()
-
-for index, char in enumerate(text):
-    emoticon = ""
-    if char == ":" and index + 1 < len(text) and text[index + 1] != " ":
-        emoticon += char + text[index + 1]
-        print(emoticon)
+txt = input()
+[print(f"{txt[i]}{txt[i + 1]}") for i, j in enumerate(txt) if j == ":"]
