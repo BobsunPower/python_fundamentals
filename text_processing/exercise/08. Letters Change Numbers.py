@@ -1,18 +1,8 @@
-# TODO
-letter_map = {chr(97+i): i+1 for i in range(26)}
-data = input().split()
-result = 0
-for word in data:
-    let1 = word[0]
-    let2 = word[-1]
-    num = int(word[1:-1])
-    if let1.isupper():
-        num /= letter_map[let1.lower()]
-    else:
-        num *= letter_map[let1]
-    if let2.isupper():
-        num -= letter_map[let2.lower()]
-    else:
-        num += letter_map[let2]
-    result += num
-print(f'{result:.2f}')
+alp, tot = {chr(97 + i): i + 1 for i in range(26)}, 0
+for i in input().split():
+    fst, lst = i[0], i[-1]
+    num = int(i[1:-1])
+    num = num / alp[fst.lower()] if fst.isupper() else num * alp[fst]
+    num = num - alp[lst.lower()] if lst.isupper() else num + alp[lst]
+    tot += num
+print(f"{tot:.2f}")
