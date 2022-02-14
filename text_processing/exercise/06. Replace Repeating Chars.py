@@ -1,6 +1,2 @@
-j = ""
-for i in input():
-    if i == j:
-        continue
-    j = i
-    print(i, end="")
+s = input()
+[print(s[i], end="") for i in range(len(s)) if i + 1 == len(s) or s[i] != s[i + 1]]

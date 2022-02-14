@@ -1,2 +1,2 @@
-txt = input()
-[print(f"{txt[i]}{txt[i + 1]}") for i, j in enumerate(txt) if j == ":"]
+s = input()
+[print(f"{s[i]}{s[i + 1]}") for i, j in enumerate(s) if j == ":"]
