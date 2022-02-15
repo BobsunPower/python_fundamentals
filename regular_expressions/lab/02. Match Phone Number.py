@@ -1,9 +1,3 @@
-# TODO
 import re
-
-phone_numbers = input()
-
-search_pattern = r"(\+359-2-\d{3}-\d{4}|\+359 2 \d{3} \d{4})\b"
-valid_numbers = re.findall(search_pattern, phone_numbers)
-
-print(", ".join(valid_numbers))
+pat = r"(\+359([-| ])2\2\d{3}\2\d{4}\b)"
+print(', '.join([p for p, s in re.findall(pat, input())]))
