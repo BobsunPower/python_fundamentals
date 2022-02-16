@@ -1,6 +1,3 @@
-# TODO
 import re
-pattern = r'((?<=^_)|(?<=\s_))(?P<vname>[A-Za-z0-9]+)\b'
-data = input()
-matches = [m.group() for m in re.finditer(pattern, data)]
-print(','.join(matches))
+pat = r'\b_([a-zA-Z0-9]+)\b'
+print(",".join([m for m in re.findall(pat, input())]))
