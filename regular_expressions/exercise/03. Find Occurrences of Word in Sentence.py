@@ -1,7 +1,3 @@
-# TODO
 import re
-data = input()
-searched = input()
-pattern = fr'(?i)\b{searched}\b'
-result = re.findall(pattern, data)
-print(len(result))
+txt, pat = input(), rf'\b{input()}\b'
+print(len([i for i in re.findall(pat, txt, re.IGNORECASE)]))
