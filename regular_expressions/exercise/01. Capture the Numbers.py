@@ -1,7 +1,7 @@
 import re
 pat = r'\d+'
 while True:
-    txt = input()
-    if not txt:
+    cmd = input()
+    if not cmd:
         break
-    [print(d, end=" ") for d in re.findall(pat, txt)]
+    [print(d, end=" ") for d in re.findall(pat, cmd)]
