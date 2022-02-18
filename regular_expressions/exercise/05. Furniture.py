@@ -1,18 +1,13 @@
-# TODO
-
 import re
-text = input()
-pattern = r"(^>>)(?P<name>\w+)<<(?P<price>\d+(\.\d+)?)\!(?P<q>\d+)($|\s)"
-output = []
-result = 0
-while text != "Purchase":
-    match = re.match(pattern, text)
-    if match:
-        objects = match.groupdict()
-        output.append(objects["name"])
-        result += float(objects["price"]) * int(objects["q"])
-    text = input()
+tot = 0
+pat = r">>([A-Za-z]+)<<(\d+(\.\d+)?)!(\d+)"
 print("Bought furniture:")
-for name in output:
-    print(name)
-print(f"Total money spend: {result:.2f}")
+while True:
+    cmd = input()
+    if cmd == "Purchase":
+        break
+    vld = re.fullmatch(pat, cmd)
+    if vld:
+        print(vld[1])
+        tot += float(vld[2]) * int(vld[4])
+print(f"Total money spend: {tot:.2f}")
